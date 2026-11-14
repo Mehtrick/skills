@@ -1,7 +1,7 @@
 {
-  "name": "skills-local",
+  "name": "mehtrick-skills",
   "interface": {
-    "displayName": "Skills Repository"
+    "displayName": "Mehtrick Skills"
   },
   "plugins": [
     {
