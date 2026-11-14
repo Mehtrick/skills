@@ -10,4 +10,5 @@ Dieses Repository dient als gemeinsame Quelle für wiederverwendbare Skills, Age
 - Pflege gemeinsame Inhalte möglichst an einer Stelle. Ergänze werkzeugspezifische Konfigurationen dort, wo die jeweilige Integration sie benötigt.
 - Prüfe bei Änderungen an einer Integration die benötigten Formate, Pfade und Ladeverfahren anhand der offiziellen Dokumentation des Zielwerkzeugs.
 - Halte den Abschnitt „Installation“ in der README bei jeder Änderung an verfügbaren Skills, Agenten, Plugins oder ihren Installationswegen aktuell. Dokumentiere pro separat installierbarer Einheit das Zielwerkzeug, die Voraussetzungen, die Installationsschritte und eine kurze Funktionsprüfung. Kennzeichne geplante Installationswege als solche.
+- Verwende das GitHub-Repository als Installationsquelle. Dokumentiere für Codex das Hinzufügen des Marktplatzes über die GitHub-URL. Installationsanleitungen sollen keinen bereits vorhandenen lokalen Checkout dieses Repositories voraussetzen.
 - Verwende „Installationspaket“ als plattformübergreifenden Begriff für gemeinsam installierte Inhalte. Verwende „Plugin“, wenn das Zielwerkzeug dafür seinen Plugin-Mechanismus nutzt.
