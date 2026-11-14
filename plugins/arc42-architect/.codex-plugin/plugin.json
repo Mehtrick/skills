@@ -9,6 +9,8 @@
   "interface": {
     "displayName": "arc42 Architect",
     "shortDescription": "Draft and review arc42 documentation",
+    "logo": "./assets/arc42-architect-gold.png",
+    "composerIcon": "./assets/arc42-architect-gold.png",
     "defaultPrompt": [
       "Draft an arc42 outline and identify the missing architecture evidence."
     ]
