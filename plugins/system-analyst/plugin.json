@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "system-analyst",
+  "version": "0.1.0",
+  "description": "Challenge business requirements against the existing system and document numbered AsciiDoc use cases.",
+  "author": {
+    "name": "mehtrick"
+  }
+}

@@ -2,6 +2,8 @@
 
 Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. Die Inhalte werden zentral gepflegt und mit plattformspezifischen Konfigurationen zur Installation bereitgestellt. Das Installationspaket **arc42 Architect** hilft beim Erstellen, Ergänzen und Prüfen von Softwarearchitektur-Dokumentation nach arc42.
 
+**System Analyst** klärt fachliche Anforderungen, schreibt und prüft nummerierte AsciiDoc-Use-Cases und gleicht sie mit dem Code ab. Der Analyst nutzt `.agents/architecture.md` als gemeinsamen Index mit **arc42 Architect**.
+
 ## Zielplattformen
 
 - GitHub Copilot (CLI und VS Code)
@@ -10,7 +12,7 @@ Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten f�
 
 ## Installation
 
-Alle Anleitungen installieren **arc42 Architect** aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills).
+Die folgenden Anleitungen für **arc42 Architect** installieren das Plugin aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills).
 
 ### GitHub Copilot
 
@@ -80,6 +82,55 @@ Version `0.3.0` entfernt die Rollen `arc42-explorer` und `arc42-reviewer`. Formu
 - **GitHub Copilot:** Aktualisiere das Plugin mit `copilot plugin update arc42-architect` oder über die Plugin-Verwaltung in VS Code.
 - **Codex:** Aktualisiere den Marktplatz mit `codex plugin marketplace upgrade skills-local` und installiere das Plugin mit `codex plugin add arc42-architect@skills-local`. Falls du die alten Profile kopiert hast, kannst du `arc42-explorer.toml` und `arc42-reviewer.toml` aus deinem Agentenverzeichnis entfernen.
 - **OpenCode:** Führe den [Installationsblock](#arc42-architect-in-opencode-installieren) erneut aus. Entferne die früher kopierten Profile `arc42-explorer.md` und `arc42-reviewer.md` aus `.opencode/agents/`, damit nur der Architekt geladen wird.
+
+### System Analyst installieren
+
+Die folgenden Anleitungen installieren `system-analyst` aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills).
+
+#### GitHub Copilot
+
+Du brauchst Git-Zugriff auf GitHub und Copilot mit Unterstützung für Agent Plugins 1.0.
+
+```sh
+copilot plugin marketplace add Mehtrick/skills
+copilot plugin install system-analyst@skills-local
+```
+
+In VS Code wählst du Copilot als Agent und öffnest **Chat: Open Customizations → Browse → Configure Marketplaces → Add Marketplace**. Gib `https://github.com/Mehtrick/skills.git` ein und installiere `system-analyst` aus `skills-local`.
+
+Wähle zur Prüfung **System Analyst** über `/agent` in der CLI oder die Agentenauswahl in VS Code. Bitte um die Prüfung einer fachlichen Anforderung und die Vorbereitung eines Use Cases.
+
+#### Codex
+
+Du brauchst die Codex CLI mit Plugin-Unterstützung und Git-Zugriff auf GitHub.
+
+```sh
+codex plugin marketplace add https://github.com/Mehtrick/skills.git --ref main
+codex plugin add system-analyst@skills-local
+```
+
+Ist der Marktplatz bereits eingerichtet, aktualisiere ihn vor der Installation mit `codex plugin marketplace upgrade skills-local`. In Codex Desktop ist das Plugin nach dem Hinzufügen des Marktplatzes unter **Plugins → Skills Repository** verfügbar.
+
+Starte zur Prüfung einen Chat im Zielprojekt. Bitte mit `$system-analyst:system-analyst` um einen Use Case für eine fachliche Anforderung. Der Analyst prüft die Anforderung und schlägt vor dem ersten Speichern einen Ablageort vor.
+
+#### OpenCode
+
+Du brauchst OpenCode, Git-Zugriff auf GitHub und Bash. Führe den Block im Stammverzeichnis des Zielprojekts aus. Führe ihn für Updates erneut aus.
+
+```bash
+(
+  set -e
+  analyst_download="$(mktemp -d)"
+  trap 'rm -rf -- "$analyst_download"' EXIT
+  git clone --depth 1 --branch main https://github.com/Mehtrick/skills.git "$analyst_download"
+  analyst_package="$analyst_download/plugins/system-analyst"
+  mkdir -p .opencode/agents .opencode/skills
+  cp "$analyst_package/profiles/opencode/system-analyst.md" .opencode/agents/
+  cp -R "$analyst_package/skills/." .opencode/skills/
+)
+```
+
+Starte zur Prüfung OpenCode im Zielprojekt, wähle `system-analyst` als primären Agenten und bitte um die Prüfung eines bestehenden Use Cases.
 
 ## Inspiration und Skill-Quellen
 

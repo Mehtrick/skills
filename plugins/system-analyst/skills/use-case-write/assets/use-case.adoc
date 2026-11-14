@@ -1,0 +1,45 @@
+= <Use-case ID> <Actor goal>
+
+== History
+
+[cols="1,1,3,2",options="header"]
+|===
+|Date |Version |Change |Name
+
+|<YYYY-MM-DD> |<version> |<change summary> |<editor name>
+|===
+
+== Goal and actors
+
+<Describe the actor's goal and name the primary and relevant supporting actors.>
+
+== Trigger
+
+<Describe the event that starts the use case.>
+
+== Preconditions
+
+* <State what must already hold.>
+
+== Main flow
+
+. <Describe the primary actor's action.>
+. <Describe the system's observable response and the next action if needed.>
+
+== Alternative and failure flows
+
+=== <Branch name>
+
+<Identify the main-flow step and the branching condition.>
+
+. <Describe the actor's action or the system's observable response.>
+. <Give the step where the main flow resumes or state how the use case ends.>
+
+== Postconditions
+
+* <State the resulting system or business state after success.>
+* <State the resulting state for each failure outcome, where applicable.>
+
+== Acceptance criteria
+
+* <Given a precondition, when an event occurs, then an observable outcome follows.>

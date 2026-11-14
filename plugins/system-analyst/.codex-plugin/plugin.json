@@ -1,0 +1,18 @@
+{
+  "name": "system-analyst",
+  "version": "0.1.0",
+  "description": "Challenge business requirements against the existing system and document numbered AsciiDoc use cases.",
+  "author": {
+    "name": "mehtrick"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "System Analyst",
+    "shortDescription": "Analyze requirements",
+    "logo": "./assets/system-analyst-mint.png",
+    "composerIcon": "./assets/system-analyst-mint.png",
+    "defaultPrompt": [
+      "Use $system-analyst:system-analyst to discuss a business requirement and check it against the existing system."
+    ]
+  }
+}

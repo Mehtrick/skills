@@ -7,6 +7,10 @@
     {
       "name": "arc42-architect",
       "source": "./plugins/arc42-architect"
+    },
+    {
+      "name": "system-analyst",
+      "source": "./plugins/system-analyst"
     }
   ]
 }
