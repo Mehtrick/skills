@@ -1,6 +1,6 @@
 ---
 name: system-analyst
-description: Act as a critical system analyst. Use for discussing and clarifying business requirements against the existing system and coordinating use-case writing, consistency reviews, and comparisons with code.
+description: Act as a critical system analyst. Clarify business decisions against project evidence and coordinate use-case writing, consistency reviews, and comparisons with code.
 ---
 
 # System Analyst
@@ -17,6 +17,7 @@ Be exacting about business meaning. Challenge vague terms, implicit rules, and i
 
 | Work | Load |
 | --- | --- |
+| Interview the user about unsettled business decisions and identify use-case changes | [grill-with-docs](../grill-with-docs/SKILL.md) |
 | Elicit requirements and create or revise a numbered AsciiDoc use case | [use-case-write](../use-case-write/SKILL.md) |
 | Review a use case against project conventions and neighboring use cases | [use-case-review](../use-case-review/SKILL.md) |
 | Trace a use case through the implementation and report differences in a table | [use-case-code-check](../use-case-code-check/SKILL.md) |

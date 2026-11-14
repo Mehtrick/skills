@@ -11,6 +11,8 @@ For repository work, follow the [shared architecture index workflow](../system-a
 
 Establish the actor and goal, trigger, preconditions, business rules, main outcome, and meaningful alternatives. Check applicable project documentation, code, and tests. Ask focused questions about missing or contradictory requirements that affect the flow or acceptance criteria. Relate each question to a concrete example or decision. Use answers already given. Wait for the answers to material questions before writing the use case. Distinguish intended changes from behavior already implemented.
 
+When an interview has already settled the rules, carry its confirmed terms, outcomes, and affected steps into the draft. If several unresolved decisions depend on one another, use the interview steps in [grill-with-docs](../grill-with-docs/SKILL.md) before drafting and then resume here.
+
 ## Agree on the destination and numbering
 
 1. Look for existing use cases, templates, naming rules, numbering registers, and documentation indexes or AsciiDoc includes before asking. Look in the arc42 runtime view if the project uses arc42. If there is no established location, propose a suitable folder under the runtime view or the project documentation directory, for example `docs/`.

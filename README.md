@@ -14,6 +14,8 @@ Du kannst **arc42 Architect** (`arc42-architect`) und **System Analyst** (`syste
 
 Wenn du den Marktplatz bereits als `skills-local` eingebunden hast, deinstalliere zuerst die Plugins aus dieser Quelle und entferne den alten Marktplatz. Folge dann der Anleitung für deine Plattform.
 
+System Analyst enthält ab Version `0.2.0` den Skill `grill-with-docs`. Er klärt offene fachliche Entscheidungen anhand bestehender Use Cases, des Glossars und des Codes und hält fest, welche Use-Case-Schritte und Akzeptanzkriterien sich daraus ergeben.
+
 ### GitHub Copilot
 
 Du brauchst Git-Zugriff auf GitHub und eine Copilot-Version mit Unterstützung für Agent Plugins 1.0.
@@ -34,7 +36,7 @@ copilot plugin install system-analyst@mehtrick-skills
 2. Wähle **Browse → Configure Marketplaces → Add Marketplace** und gib `https://github.com/Mehtrick/skills.git` ein.
 3. Installiere `arc42-architect`, `system-analyst` oder beide aus dem Marktplatz `mehtrick-skills`.
 
-Öffne zur Prüfung eine neue Sitzung im Zielprojekt. Wähle **arc42 Architect** oder **System Analyst** über `/agent` in der CLI oder in der Agentenauswahl von VS Code. Bitte den Architekten um eine arc42-Gliederung oder den Analysten um die Prüfung einer fachlichen Anforderung.
+Öffne zur Prüfung eine neue Sitzung im Zielprojekt und wähle den Agenten über `/agent` in der CLI oder in der Agentenauswahl von VS Code. Bitte **arc42 Architect** um eine arc42-Gliederung oder **System Analyst**, mit `grill-with-docs` eine offene Entscheidung zu einem Use Case zu klären.
 
 [GitHub Copilot CLI – Plugins installieren](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing) · [VS Code – Agent Plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)
 
@@ -52,7 +54,7 @@ codex plugin add system-analyst@mehtrick-skills
 
 Nach dem Hinzufügen des Marktplatzes findest du **arc42 Architect** und **System Analyst** auch in Codex Desktop unter **Plugins → Mehtrick Skills**. Einen bereits eingerichteten Marktplatz aktualisierst du mit `codex plugin marketplace upgrade mehtrick-skills`.
 
-Öffne zur Prüfung einen neuen Chat im Zielprojekt. Bitte mit `$arc42-architect:arc42-architect` um eine arc42-Gliederung oder mit `$system-analyst:system-analyst` um einen Use Case für eine fachliche Anforderung.
+Öffne zur Prüfung einen neuen Chat im Zielprojekt. Bitte mit `$arc42-architect:arc42-architect` um eine arc42-Gliederung oder mit `$system-analyst:grill-with-docs` um die Klärung einer offenen Entscheidung zu einem Use Case.
 
 [Codex – Git-Marktplätze hinzufügen](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
 
@@ -76,10 +78,10 @@ Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe den Block im Sta
 )
 ```
 
-Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten als primären Agenten. Bitte `arc42-architect` um eine arc42-Gliederung oder `system-analyst` um die Prüfung eines bestehenden Use Cases.
+Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten als primären Agenten. Bitte `arc42-architect` um eine arc42-Gliederung oder `system-analyst`, mit `@grill-with-docs` eine offene Entscheidung zu einem Use Case zu klären.
 
 [OpenCode – Agenten](https://opencode.ai/docs/agents/) · [OpenCode – Skills](https://opencode.ai/docs/skills/)
 
 ## Inspiration und Skill-Quellen
 
-Matt Pococks Sammlung ist eine Inspiration für den Aufbau dieses Repositories und eine Quelle für weitere Skills, etwa zur Anforderungsklärung, Domänenmodellierung und testgetriebenen Entwicklung. [mattpocock/skills](https://github.com/mattpocock/skills)
+Matt Pococks Sammlung ist eine Inspiration für den Aufbau dieses Repositories. Sein `grill-with-docs` ist die Vorlage für die auf Use Cases zugeschnittene Variante in System Analyst. [mattpocock/skills](https://github.com/mattpocock/skills) · [grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs)
