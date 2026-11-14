@@ -6,7 +6,7 @@ description: "Draft or review arc42 section 5, including system-level decomposit
 
 # Building Block View
 
-For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, find missing locations, and confirm uncertain paths before editing.
 
 1. Inspect the system-level whitebox, the affected building block, neighboring descriptions, and relevant code or configuration. Identify where the change belongs and infer the correct heading level from the parent include or document hierarchy.
 2. Describe each block's responsibility, interfaces and directions, principal capabilities, relevant quality properties, code location, and linked decisions. Link traceable evidence. Add a diagram where it helps explain interfaces or dependencies. Keep its names and relationships aligned with the table.

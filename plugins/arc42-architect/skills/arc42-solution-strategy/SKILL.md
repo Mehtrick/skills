@@ -6,7 +6,7 @@ description: "Draft or review arc42 section 4, relating architecture principles,
 
 # Solution Strategy
 
-For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, find missing locations, and confirm uncertain paths before editing.
 
 1. Read sections 1–3 and relevant ADRs before drafting. Extract the actual goals, constraints, and external dependencies that shape the solution.
 2. Summarize the architecture principles with their system-level implications. Record core technologies with their roles and rationale. Include organizational decisions where responsibilities or team boundaries shape the architecture.

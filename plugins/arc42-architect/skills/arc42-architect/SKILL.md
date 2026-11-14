@@ -14,11 +14,9 @@ Follow the target project's chapter numbering, paths, and terminology. For new a
 
 For a chat-only draft or review, present proposed changes in the response. Apply file, index, and diagram updates only for tasks that involve editing project files.
 
-## Delegation
+## Research and review
 
-When delegation is available and authorized, ask `arc42-explorer` to resolve missing or stale index entries and gather any missing evidence for a substantial draft. Combine this work into one assignment where possible. Give it the system scope, the sections in scope, and the gaps to investigate. Wait for its findings before making dependent edits. For a substantial draft, delegate an independent review to `arc42-reviewer` once the draft is ready. Give it the draft or its location and the relevant sources, and wait for its findings before finalizing.
-
-Both specialists return findings. The architect resolves conflicts, clarifies uncertain facts or destinations with the user, and owns any requested edits. Handle focused single-section tasks directly when the locations and sources are known. If the named specialists or delegation are unavailable, gather the evidence and check the draft in the current session.
+Handle repository research, drafting, and review in the current session. Gather and verify the evidence needed for the requested sections before making dependent edits. For a substantial draft, use the [quality review skill](../arc42-quality-review/SKILL.md) to check the draft against the sources before finalizing. For a focused change, check the affected section and its references.
 
 ## Related skills
 
@@ -38,7 +36,7 @@ For detailed work, load only the applicable sibling skill from the installed plu
 | Quality tree | [arc42-quality-tree](../arc42-quality-tree/SKILL.md) |
 | Risks and technical debt | [arc42-risks](../arc42-risks/SKILL.md) |
 | Glossary | [arc42-glossary](../arc42-glossary/SKILL.md) |
-| Consistency and terminology review | [arc42-quality-review](../arc42-quality-review/SKILL.md) |
+| Evidence, consistency, and terminology review | [arc42-quality-review](../arc42-quality-review/SKILL.md) |
 
 For runtime and deployment views, trace representative interactions and deployment mappings to observable evidence. Use cases can inform runtime views. A runtime view still needs the collaborating technical elements and their interactions.
 

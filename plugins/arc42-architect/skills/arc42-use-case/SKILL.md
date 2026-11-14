@@ -6,7 +6,7 @@ description: "Draft a functional use case that provides input for an arc42 runti
 
 # Use Cases
 
-For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, find missing locations, and confirm uncertain paths before editing.
 
 1. Inspect the project's use-case template and neighboring records. Establish the primary actor, goal, trigger, preconditions, and observable outcome. Clarify missing facts and label assumptions.
 2. Describe the main success scenario and explicit alternatives or failures. Keep steps in business terms and add testable acceptance criteria derived from the expected outcome.

@@ -6,7 +6,7 @@ description: "Maintain or review the arc42 section 12 glossary, including projec
 
 # Glossary
 
-For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, find missing locations, and confirm uncertain paths before editing.
 
 1. Find the canonical glossary and check for existing terms, synonyms, and abbreviations. Consult applicable project sources before suggesting a new definition.
 2. Capture the exact term and a short self-contained definition. Expand abbreviations and distinguish similar terms where ambiguity affects the architecture. Ask for clarification if the project uses conflicting meanings.

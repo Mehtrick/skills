@@ -6,7 +6,7 @@ description: "Draft or review arc42 section 2 for technical, organizational, and
 
 # Architecture Constraints
 
-For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, find missing locations, and confirm uncertain paths before editing.
 
 1. Read the current chapter, requirements, applicable policies, and glossary. Identify binding constraints and trace each to a source or an explicit user statement.
 2. Group constraints into technical, organizational, and applicable conventions. Record the restriction, rationale or authority, affected scope, and architectural consequence. Distinguish externally imposed constraints from design choices whose rationale belongs in an ADR.

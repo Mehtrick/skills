@@ -5,11 +5,9 @@ The target repository's `.agents/architecture.md` is the shared source for archi
 ## Find the relevant artifacts
 
 1. Read the index first and select the system in scope. Check the entries needed for this task against the actual files, directories, or include chain. Reuse valid entries without repeating discovery.
-2. If the index is missing or the relevant entries are incomplete or stale, give `arc42-explorer` the system scope and the locations that need discovery, when delegation is available and authorized. The Explorer follows repository guidance, build configuration, existing documents, and includes. If delegation is unavailable, perform the same focused discovery yourself.
-3. The Explorer returns verified locations with evidence, a proposed Markdown addition or correction, and plausible options for any unresolved location. The acting agent asks the user to resolve ambiguities before making edits that depend on them. For a new artifact with no established destination, propose a location for confirmation.
-4. When the user requests repository edits or explicitly asks to set up the index, the acting agent creates or updates the index with confirmed entries relevant to the task. For a chat-only request, return the proposed entries in chat. Preserve other systems and existing entries outside the scope of the change.
-
-When acting as a read-only specialist, report gaps and proposed index changes to the parent agent. The parent handles user questions and writes the confirmed entries.
+2. If the index is missing or relevant entries are incomplete or stale, find the locations needed for the system and sections in scope. Follow repository guidance, build configuration, existing documents, and includes. Record the source that verifies each location.
+3. Ask the user to choose among plausible locations, with the evidence for each option, before making edits that depend on the choice. For a new artifact with no established destination, propose a location for confirmation.
+4. When the user requests repository edits or explicitly asks to set up the index, create or update it with confirmed entries relevant to the task. For a chat-only request, return the proposed entries in chat. Preserve other systems and existing entries outside the scope of the change.
 
 ## Record only what the project uses
 

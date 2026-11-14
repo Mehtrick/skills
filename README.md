@@ -42,45 +42,44 @@ codex plugin marketplace add https://github.com/Mehtrick/skills.git --ref main
 codex plugin add arc42-architect@skills-local
 ```
 
-Nach dem Hinzufügen des Marktplatzes kannst du **arc42 Architect** auch in Codex Desktop unter **Plugins → Skills Repository** installieren. Für Explorer und Reviewer führe im Zielprojekt den [Installationsblock](#profile-und-skills-von-github-kopieren) mit `arc42_client=codex` aus.
+Nach dem Hinzufügen des Marktplatzes kannst du **arc42 Architect** auch in Codex Desktop unter **Plugins → Skills Repository** installieren. Falls der Marktplatz schon eingerichtet ist, aktualisiere ihn mit `codex plugin marketplace upgrade skills-local`. Ab Version `0.3.0` genügt für **arc42 Architect** die Plugin-Installation.
 
-Öffne zur Prüfung einen neuen Chat im Zielprojekt, wähle `$arc42-architect` und bitte um eine arc42-Gliederung unter Einbindung von `arc42-explorer` und `arc42-reviewer`.
+Öffne zur Prüfung einen neuen Chat im Zielprojekt. Bitte mit `$arc42-architect:arc42-architect` um eine arc42-Gliederung mit Quellen aus dem Repository und einen anschließenden Review des Entwurfs im Chat.
 
 [Codex – Git-Marktplätze hinzufügen](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
 
 ### OpenCode
 
-Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe im Zielprojekt den [Installationsblock](#profile-und-skills-von-github-kopieren) mit `arc42_client=opencode` aus.
+Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe den [Installationsblock](#arc42-architect-in-opencode-installieren) im Zielprojekt aus.
 
 Starte zur Prüfung OpenCode im Zielprojekt, wähle `arc42-architect` als primären Agenten und bitte um eine arc42-Gliederung.
 
 [OpenCode – Agenten](https://opencode.ai/docs/agents/) · [OpenCode – Skills](https://opencode.ai/docs/skills/)
 
-### Profile und Skills von GitHub kopieren
+### arc42 Architect in OpenCode installieren
 
-Führe den Block mit Bash im Stammverzeichnis des Zielprojekts aus. Er kopiert für Codex die beiden Subagentenprofile und für OpenCode alle Profile und Skills.
+Führe den Block mit Bash im Stammverzeichnis des Zielprojekts aus. Er kopiert das Architektenprofil und die 14 Skills. Führe ihn für Updates erneut aus.
 
 ```bash
 (
   set -e
-  arc42_client=opencode # Für Codex: codex
   arc42_download="$(mktemp -d)"
   trap 'rm -rf -- "$arc42_download"' EXIT
   git clone --depth 1 --branch main https://github.com/Mehtrick/skills.git "$arc42_download"
   arc42_package="$arc42_download/plugins/arc42-architect"
-  case "$arc42_client" in
-    codex)
-      mkdir -p .codex/agents
-      cp "$arc42_package"/profiles/codex/*.toml .codex/agents/
-      ;;
-    opencode)
-      mkdir -p .opencode/agents .opencode/skills
-      cp "$arc42_package"/profiles/opencode/*.md .opencode/agents/
-      cp -R "$arc42_package/skills/." .opencode/skills/
-      ;;
-  esac
+  mkdir -p .opencode/agents .opencode/skills
+  cp "$arc42_package/profiles/opencode/arc42-architect.md" .opencode/agents/
+  cp -R "$arc42_package/skills/." .opencode/skills/
 )
 ```
+
+### arc42 Architect von 0.2.0 auf 0.3.0 umstellen
+
+Version `0.3.0` entfernt die Rollen `arc42-explorer` und `arc42-reviewer`. Formuliere bestehende Aufträge mit diesen Rollennamen so um, dass der Architekt selbst im Repository recherchiert oder den Entwurf prüft.
+
+- **GitHub Copilot:** Aktualisiere das Plugin mit `copilot plugin update arc42-architect` oder über die Plugin-Verwaltung in VS Code.
+- **Codex:** Aktualisiere den Marktplatz mit `codex plugin marketplace upgrade skills-local` und installiere das Plugin mit `codex plugin add arc42-architect@skills-local`. Falls du die alten Profile kopiert hast, kannst du `arc42-explorer.toml` und `arc42-reviewer.toml` aus deinem Agentenverzeichnis entfernen.
+- **OpenCode:** Führe den [Installationsblock](#arc42-architect-in-opencode-installieren) erneut aus. Entferne die früher kopierten Profile `arc42-explorer.md` und `arc42-reviewer.md` aus `.opencode/agents/`, damit nur der Architekt geladen wird.
 
 ## Inspiration und Skill-Quellen
 
