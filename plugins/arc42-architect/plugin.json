@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "arc42-architect",
+  "version": "0.2.0",
+  "description": "Draft, extend, and review arc42 software architecture documentation.",
+  "author": {
+    "name": "mehtrick"
+  }
+}

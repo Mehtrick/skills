@@ -1,0 +1,12 @@
+{
+  "name": "skills-local",
+  "owner": {
+    "name": "mehtrick"
+  },
+  "plugins": [
+    {
+      "name": "arc42-architect",
+      "source": "./plugins/arc42-architect"
+    }
+  ]
+}

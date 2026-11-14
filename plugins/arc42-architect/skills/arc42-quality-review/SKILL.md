@@ -6,7 +6,7 @@ description: "Review arc42 documentation for architecture evidence, consistency,
 
 # Quality Review
 
-Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
 
 1. Establish scope and read relevant sections, the project's glossary, quality goals, and architectural decisions. Check structural integrity, including include directives, links, headings, numbering, and stable IDs.
 2. Check terminology and quality attributes against the project's definitions. Use the [bundled quality model reference](references/quality-model.md) when appropriate. Check that quality scenarios are measurable and evidence in a quality tree traces to actual goals, scenarios, or accepted ADRs.

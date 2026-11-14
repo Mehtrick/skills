@@ -20,6 +20,8 @@ Diese drei Werkzeuge haben bei der Entwicklung der Integrationen Vorrang. Weiter
 
 Installationsquelle für alle drei Werkzeuge ist das [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills).
 
+Das arc42-Paket enthält 14 Skills und drei Rollen. **arc42 Architect** (`arc42-architect`) führt den Dialog und erstellt oder bearbeitet die Dokumentation. **Architecture Explorer** (`arc42-explorer`) sammelt bei größeren Aufgaben Belege im Repository. **Architecture Reviewer** (`arc42-reviewer`) prüft den Entwurf. Die Spezialisten liefern Befunde an den Architekten.
+
 ### Codex · arc42 Architect
 
 Das Paket enthält die Architektenrolle als Einstiegsskill und weitere Skills für einzelne arc42-Aufgaben. Der Agent sucht die Architekturdokumentation im Zielrepository und fragt bei unklaren Ablageorten nach.
@@ -38,46 +40,91 @@ Das Paket enthält die Architektenrolle als Einstiegsskill und weitere Skills f�
    codex plugin add arc42-architect@skills-local
    ```
 
-3. Öffne einen neuen Chat im gewünschten Projekt und wähle `arc42-architect` über `$` im Eingabefeld. Gib zum Beispiel ein: „Entwirf für einen internen Terminservice eine arc42-Gliederung. Der Service legt Termine an und versendet Erinnerungen. Markiere offene Architekturfragen und ändere keine Dateien.“ Der Entwurf sollte die arc42-Abschnitte abdecken und fehlende Angaben wie die Systemgrenze oder messbare Qualitätsziele sichtbar machen.
+3. Richte Explorer und Reviewer einmal im Zielprojekt ein. Führe dort den [GitHub-Installationsblock](#profile-und-skills-von-github-installieren) mit `arc42_client=codex` aus. Codex lädt die beiden TOML-Profile aus der Projektkonfiguration. Der Architekt ist über den Einstiegsskill im Plugin verfügbar.
+4. Öffne einen neuen Chat im gewünschten Projekt und wähle `arc42-architect` über `$` im Eingabefeld. Verwende für die [Funktionsprüfung](#zusammenspiel-der-agenten-prüfen) einen Auftrag, der ausdrücklich um die beiden Subagenten bittet.
+
+Für Updates aktualisierst du den Marktplatz mit `codex plugin marketplace upgrade skills-local` und führst die Plugin-Installation und den Installationsblock für die Profile erneut aus.
 
 [Codex – Git-Marktplätze hinzufügen](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
 
-### GitHub Copilot · arc42-Skills
+### GitHub Copilot · arc42 Architect
 
-**Voraussetzung** ist Git-Zugriff auf GitHub und eine Copilot-Version mit Agent-Skill-Unterstützung, etwa Copilot CLI oder Copilot in VS Code.
+**Voraussetzung** ist Git-Zugriff auf GitHub und eine Copilot-Version mit Unterstützung für Agent Plugins 1.0. Der Plugin-Installationsweg ist ab Version `0.2.0` dieses Pakets verfügbar.
 
-1. Installiere die Skills von GitHub nach `.github/skills/` im Stammverzeichnis deines Zielprojekts. Verwende dazu die [GitHub-Installationsanleitung](#skills-von-github-installieren). Für die persönliche Nutzung über mehrere Projekte hinweg kannst du bei Copilot CLI und VS Code `~/.copilot/skills/` als Ziel verwenden.
-2. Öffne das Zielprojekt in VS Code oder starte die Copilot CLI in dessen Stammverzeichnis. Starte einen neuen Chat. Wähle in VS Code `/arc42-architect` im Chat. In der Copilot CLI prüfst du mit `/skills`, ob `arc42-architect` verfügbar ist, und bittest Copilot anschließend, den Skill zu verwenden.
-3. Gib zum Test den Terminservice-Auftrag aus dem Codex-Abschnitt ein. Der Skill sollte eine arc42-Gliederung mit offenen Architekturfragen liefern.
+**Copilot CLI**
 
-[GitHub Copilot CLI – Agent Skills](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills) · [VS Code – Agent Skills](https://code.visualstudio.com/docs/agent-customization/agent-skills)
+```sh
+copilot plugin marketplace add Mehtrick/skills
+copilot plugin install arc42-architect@skills-local
+```
 
-### OpenCode · arc42-Skills
+Prüfe die Installation mit `copilot plugin list`. Starte im Zielprojekt eine neue Sitzung, wähle **arc42 Architect** über `/agent` und führe die [Funktionsprüfung](#zusammenspiel-der-agenten-prüfen) aus. Aktualisiere das Paket mit `copilot plugin update arc42-architect@skills-local`.
 
-**Voraussetzung** ist Git-Zugriff auf GitHub und eine OpenCode-Version mit Skill-Unterstützung.
+**VS Code**
 
-1. Installiere die Skills von GitHub nach `.opencode/skills/` im Stammverzeichnis deines Zielprojekts. Verwende dazu die [GitHub-Installationsanleitung](#skills-von-github-installieren). Für die persönliche Nutzung über mehrere Projekte hinweg kannst du das globale Skill-Verzeichnis unter deiner OpenCode-Konfiguration verwenden, standardmäßig `~/.config/opencode/skills/`.
-2. Starte OpenCode im Zielprojekt und beginne einen neuen Chat. Bitte OpenCode, den Skill `arc42-architect` zu laden. In OpenCode-Versionen mit Skill-Erwähnungen kannst du `@arc42-architect` im Prompt verwenden. Der gewählte Agent braucht Zugriff auf den Skill.
-3. Gib zum Test den Terminservice-Auftrag aus dem Codex-Abschnitt ein. Der Skill sollte eine arc42-Gliederung mit offenen Architekturfragen liefern.
+1. Wähle Copilot als Agent und öffne **Chat: Open Customizations**.
+2. Öffne **Browse → Configure Marketplaces → Add Marketplace** und gib `https://github.com/Mehtrick/skills.git` ein.
+3. Wähle den Marktplatz `skills-local` und installiere **arc42-architect**. Starte einen neuen Chat, wähle **arc42 Architect** in der Agentenauswahl und führe die [Funktionsprüfung](#zusammenspiel-der-agenten-prüfen) aus.
 
-[OpenCode – Skills](https://opencode.ai/docs/skills/)
+Wenn du die arc42-Skills bereits als Dateien eingebunden hast, entferne diese Kopien nach dem Wechsel, damit jede Skill-ID nur einmal geladen wird.
 
-### Skills von GitHub installieren
+[GitHub Copilot CLI – Plugins installieren](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing) · [VS Code – Agent Plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)
 
-Führe den folgenden Block mit Git und Bash (z. B. WSL oder Git Bash) im Stammverzeichnis deines Zielprojekts aus. Wähle das Zielverzeichnis passend zu deinem Werkzeug. Der Befehl lädt den Stand von `main` aus GitHub in ein temporäres Verzeichnis und installiert alle Skill-Ordner gemeinsam. So bleiben Vorlagen und Querverweise verfügbar.
+### OpenCode · arc42 Architect
+
+**Voraussetzung** ist Git-Zugriff auf GitHub sowie OpenCode 2 mit Unterstützung für Agenten und Skills.
+
+1. Führe den [GitHub-Installationsblock](#profile-und-skills-von-github-installieren) mit `arc42_client=opencode` aus. Er kopiert die drei Agentenprofile und alle Skills in das Zielprojekt.
+2. Starte OpenCode im Zielprojekt, wähle `arc42-architect` als primären Agenten und führe die [Funktionsprüfung](#zusammenspiel-der-agenten-prüfen) aus.
+
+[OpenCode – Agenten](https://opencode.ai/docs/agents/) · [OpenCode – Skills](https://opencode.ai/docs/skills/)
+
+### Profile und Skills von GitHub installieren
+
+Führe den Block mit Git und Bash (z. B. WSL oder Git Bash) im Stammverzeichnis deines Zielprojekts aus. Für Codex kopiert er die beiden Subagentenprofile. Für OpenCode kopiert er alle drei Profile sowie die Skills mit ihren Vorlagen und Referenzen. Er verwendet den Stand von `main` auf GitHub.
 
 ```bash
 (
   set -e
-  arc42_target=".github/skills" # Für OpenCode: .opencode/skills
+  arc42_client=opencode # Für Codex: codex
   arc42_download="$(mktemp -d)"
   trap 'rm -rf -- "$arc42_download"' EXIT
   git clone --depth 1 --branch main https://github.com/Mehtrick/skills.git "$arc42_download"
-  mkdir -p "$arc42_target"
-  cp -R "$arc42_download/plugins/arc42-architect/skills/." "$arc42_target/"
+  arc42_package="$arc42_download/plugins/arc42-architect"
+  case "$arc42_client" in
+    codex)
+      mkdir -p .codex/agents
+      cp "$arc42_package"/profiles/codex/*.toml .codex/agents/
+      ;;
+    opencode)
+      mkdir -p .opencode/agents .opencode/skills
+      cp "$arc42_package"/profiles/opencode/*.md .opencode/agents/
+      cp -R "$arc42_package/skills/." .opencode/skills/
+      ;;
+  esac
 )
 ```
 
-Der Einstiegsskill liegt anschließend unter `<Zielverzeichnis>/arc42-architect/SKILL.md`. Zum Aktualisieren führst du denselben Block erneut aus. Sichere eigene Änderungen an installierten Skills vor der Aktualisierung.
+Zum Aktualisieren der kopierten Dateien führst du denselben Block erneut aus. Sichere vorher eigene Änderungen an den Profilen und Skills.
+
+### Zusammenspiel der Agenten prüfen
+
+Starte im Zielprojekt mit dem Architekten und verwende diesen Auftrag:
+
+> Entwirf eine arc42-Gliederung für dieses Repository. Starte zuerst `arc42-explorer`, um belegt zu klären, welche Bausteine und externen Schnittstellen es gibt. Lass anschließend `arc42-reviewer` den Entwurf unabhängig prüfen. Warte auf beide Ergebnisse, markiere offene Fragen und gib den Entwurf im Chat aus.
+
+Prüfe, ob beide Subagenten gestartet werden und ihre Befunde in den Entwurf einfließen. Für kleinere Änderungen kann der Architekt den passenden Fachskill direkt einsetzen.
+
+### Architekturindex und AsciiDoc
+
+`.agents/architecture.md` im Zielrepository ist die gemeinsame Referenz für Ablageorte, Vorlagen und Konventionen pro System. Alle arc42-Rollen und Fachskills lesen sie zuerst. Bei fehlenden oder veralteten Einträgen ermittelt der Explorer die für den Auftrag benötigten Pfade. Bei mehreren plausiblen Orten klärt der Architekt die Auswahl mit dir. Wenn der Auftrag Dateiänderungen umfasst, speichert er die bestätigten Einträge. Der Index wächst mit der Arbeit an den tatsächlich benötigten Kapiteln.
+
+Du kannst die Einrichtung gezielt prüfen. Bitte den Architekten in einem Zielprojekt ohne Index, den Explorer nach der bestehenden ADR-Ablage suchen und den Index dafür anlegen zu lassen. Bei einer zweiten ADR-Aufgabe sollte der Agent den bestätigten Pfad aus dem Index verwenden.
+
+Neue arc42-Dokumentation verwendet AsciiDoc (`.adoc`). Wähle beim offiziellen Download die Dokumentsprache und **AsciiDoc**. Das Projekt übernimmt die Abschnitte, die es braucht. [Offizielle arc42-Vorlage](https://arc42.org/download/)
 
 Die [AGENTS.md](AGENTS.md) beschreibt, wie KI-Agenten an diesem Repository mitarbeiten sollen.
+
+## Inspiration und Skill-Quellen
+
+Matt Pococks Skill-Sammlung ist eine Inspiration für den Aufbau und die Verteilung dieses Repositories und eine externe Quelle für wiederverwendbare Skills, etwa für Anforderungsklärung, Domänenmodellierung und testgetriebene Entwicklung. [mattpocock/skills](https://github.com/mattpocock/skills)

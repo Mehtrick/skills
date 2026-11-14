@@ -6,7 +6,7 @@ description: "Write measurable and prioritized arc42 section 10 quality scenario
 
 # Quality Scenarios
 
-Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
 
 1. Read existing scenarios and the project's quality model. The [bundled reference](../arc42-quality-review/references/quality-model.md) can help if the project has none. Tie the scenario to a quality goal or architecture decision where possible.
 2. Capture the source of the stimulus, conditions and workload, the relevant part of the system, its expected response, and a threshold with a unit and observation window where needed. Confirm any threshold that cannot be inferred from evidence.

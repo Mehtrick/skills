@@ -6,7 +6,7 @@ description: "Draft or review arc42 section 3, including the system boundary, bu
 
 # Context and Scope
 
-Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
 
 1. Read the current system scope, introduction, constraints, and glossary. Set the system boundary and identify direct external actors and systems. Show indirect actors only where they explain a material exchange, and identify the intermediary.
 2. For the business context, describe incoming and outgoing information in the domain language. Provide a context diagram and a table with Partner | Incoming information | Outgoing information where both clarify the boundary.

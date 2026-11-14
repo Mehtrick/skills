@@ -6,7 +6,7 @@ description: "Build or review an evidence-backed arc42 section 10 quality tree f
 
 # Quality Tree
 
-Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
 
 1. Read section 1 goals, accepted ADRs, and section 10 scenarios. Use the local quality model or the [bundled reference](../arc42-quality-review/references/quality-model.md) to map each piece of evidence to a subcharacteristic.
 2. Include branches supported by a goal, scenario, or accepted ADR. Exclude draft, rejected, or superseded decisions as evidence of adopted architecture. Use the ADR's own status rather than inferring it from mentions in other documents.

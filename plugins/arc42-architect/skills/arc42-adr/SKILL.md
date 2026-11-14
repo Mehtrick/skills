@@ -6,7 +6,7 @@ description: "Draft or revise an architecture decision record for arc42 section 
 
 # Architecture Decision Records
 
-Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
 
 1. Check that the choice has architectural consequences, such as effects across components, long-lived constraints, or measurable effects on system qualities. Read existing ADRs for numbering, status semantics, and language.
 2. Gather the decision, context, deciding owner, date, considered alternatives, and consequences. Use a proposed status for a draft unless an accepted status has evidence. Mark missing owner, approval, or alternatives as open.

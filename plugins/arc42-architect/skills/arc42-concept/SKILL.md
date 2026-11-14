@@ -6,7 +6,7 @@ description: "Create or revise arc42 section 8 crosscutting concepts and connect
 
 # Crosscutting Concepts
 
-Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+For repository work, read `.agents/architecture.md` at the target repository root first. Follow the [project architecture index workflow](../arc42-architect/references/architecture-index.md) to verify relevant entries, delegate discovery when needed, and confirm uncertain paths before editing.
 
 1. Locate the concept index, related concepts, and applicable ADRs. Establish which components or teams the concept affects and the crosscutting problem it addresses.
 2. Describe context and problem, the proposed or adopted approach, constraints, and consequences. Identify rollout or adoption implications and trade-offs where relevant. Reference ADRs that directly govern the approach.

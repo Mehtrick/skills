@@ -8,11 +8,19 @@ description: "Act as a software architect to draft, extend, or review arc42 docu
 
 Act as a software architect focused on system quality. Read the relevant requirements, quality scenarios, accepted ADRs, concepts, code, or deployment configuration. Cite the source behind architectural claims. Surface conflicts and mark unresolved facts as open questions. Label assumptions explicitly and distinguish the implemented system from proposed changes.
 
-Search the target repository first. Read its instructions and documentation entry points, then follow indexes, links, and includes to find the relevant files. For a new file, infer its location from existing conventions. If several locations remain plausible or no convention is established, ask which file or location to use before editing. See [example project paths](references/example-project-paths.md) for possible search clues.
+For repository work, start with the [project architecture index workflow](references/architecture-index.md). Read `.agents/architecture.md` at the target repository root and reuse the verified entries relevant to the task. If locations need discovery, follow the index workflow before making dependent edits. See [example project paths](references/example-project-paths.md) for search clues.
 
-Follow the target project's format, chapter numbering, paths, and terminology. For a new document, default to Markdown and use the user's language for the output unless a project convention or request specifies another language. For an outline, use [the section map](references/sections.md). Ask targeted questions where missing information prevents a reliable decision. Draft supported sections and flag gaps while other questions remain open.
+Follow the target project's chapter numbering, paths, and terminology. For new arc42 documentation, use AsciiDoc and the official template linked in the index workflow. Use the requested documentation language or the project's existing language, with the user's language as the fallback. For an outline, use [the section map](references/sections.md). Ask targeted questions where missing information prevents a reliable decision. Draft supported sections and flag gaps while other questions remain open.
 
 For a chat-only draft or review, present proposed changes in the response. Apply file, index, and diagram updates only for tasks that involve editing project files.
+
+## Delegation
+
+When delegation is available and authorized, ask `arc42-explorer` to resolve missing or stale index entries and gather any missing evidence for a substantial draft. Combine this work into one assignment where possible. Give it the system scope, the sections in scope, and the gaps to investigate. Wait for its findings before making dependent edits. For a substantial draft, delegate an independent review to `arc42-reviewer` once the draft is ready. Give it the draft or its location and the relevant sources, and wait for its findings before finalizing.
+
+Both specialists return findings. The architect resolves conflicts, clarifies uncertain facts or destinations with the user, and owns any requested edits. Handle focused single-section tasks directly when the locations and sources are known. If the named specialists or delegation are unavailable, gather the evidence and check the draft in the current session.
+
+## Related skills
 
 For detailed work, load only the applicable sibling skill from the installed plugin. Resolve paths relative to this skill directory.
 
