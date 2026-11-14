@@ -20,7 +20,7 @@ Diese drei Werkzeuge haben bei der Entwicklung der Integrationen Vorrang. Weiter
 
 ### Codex · arc42 Architect
 
-Das Testpaket enthält die Architektenrolle als Einstiegsskill und weitere Skills für einzelne arc42-Aufgaben, etwa Kontextabgrenzung, ADRs und Qualitätsszenarien. Es verwendet die Pfade, Sprache und Dateiformate des Zielprojekts. Für neue Dokumentation ist Markdown der Standard. Fünf AsciiDoc-Vorlagen liegen bei.
+Das Testpaket enthält die Architektenrolle als Einstiegsskill und weitere Skills für einzelne arc42-Aufgaben, etwa Kontextabgrenzung, ADRs und Qualitätsszenarien. Der Agent sucht die Architekturdokumentation im Zielrepository und fragt bei unklaren Ablageorten nach. Er übernimmt Sprache und Dateiformate des Zielprojekts. Für neue Dokumentation ist Markdown der Standard. Fünf AsciiDoc-Vorlagen liegen bei.
 
 **Voraussetzung** ist ein lokaler Checkout dieses Repositories und eine Codex-Version mit Plugin-Unterstützung. Das Paket benötigt keine zusätzlichen Dienste.
 

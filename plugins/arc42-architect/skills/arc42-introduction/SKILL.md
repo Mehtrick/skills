@@ -6,6 +6,8 @@ description: "Draft or review arc42 section 1, including system purpose, archite
 
 # Introduction and Goals
 
+Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+
 1. Read the system brief and the existing introduction, relevant requirements, and glossary. Summarize the system purpose, key capabilities, and scope in the project's terms.
 2. Identify the highest-priority quality goals. For each goal capture a system-specific name, the stakeholder motivation, and the quality subcharacteristic if the project uses a quality model. Use the project's model or the [bundled reference](../arc42-quality-review/references/quality-model.md). Ask which competing goals matter most when priorities are unclear. Merge overlapping goals only when their motivations and implications match.
 3. Record stakeholder roles and expectations. Include a named contact only if the project supplies one and the document needs it.

@@ -6,6 +6,8 @@ description: "Write measurable and prioritized arc42 section 10 quality scenario
 
 # Quality Scenarios
 
+Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+
 1. Read existing scenarios and the project's quality model. The [bundled reference](../arc42-quality-review/references/quality-model.md) can help if the project has none. Tie the scenario to a quality goal or architecture decision where possible.
 2. Capture the source of the stimulus, conditions and workload, the relevant part of the system, its expected response, and a threshold with a unit and observation window where needed. Confirm any threshold that cannot be inferred from evidence.
 3. Express the scenario in one cohesive sentence when it fits the project style. Example: “When 1,000 active users submit requests for ten minutes, the API completes at least 95% of requests within 250 ms.”

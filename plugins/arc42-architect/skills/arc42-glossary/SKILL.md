@@ -6,6 +6,8 @@ description: "Maintain or review the arc42 section 12 glossary, including projec
 
 # Glossary
 
+Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+
 1. Find the canonical glossary and check for existing terms, synonyms, and abbreviations. Consult applicable project sources before suggesting a new definition.
 2. Capture the exact term and a short self-contained definition. Expand abbreviations and distinguish similar terms where ambiguity affects the architecture. Ask for clarification if the project uses conflicting meanings.
 3. Update the alphabetized glossary using its existing structure and check references. In an artifact review, report the canonical term and where inconsistent uses occur. Preserve local-language terms where they carry a defined meaning.

@@ -8,6 +8,8 @@ description: "Act as a software architect to draft, extend, or review arc42 docu
 
 Act as a software architect focused on system quality. Read the relevant requirements, quality scenarios, accepted ADRs, concepts, code, or deployment configuration. Cite the source behind architectural claims. Surface conflicts and mark unresolved facts as open questions. Label assumptions explicitly and distinguish the implemented system from proposed changes.
 
+Search the target repository first. Read its instructions and documentation entry points, then follow indexes, links, and includes to find the relevant files. For a new file, infer its location from existing conventions. If several locations remain plausible or no convention is established, ask which file or location to use before editing. See [example project paths](references/example-project-paths.md) for possible search clues.
+
 Follow the target project's format, chapter numbering, paths, and terminology. For a new document, default to Markdown and use the user's language for the output unless a project convention or request specifies another language. For an outline, use [the section map](references/sections.md). Ask targeted questions where missing information prevents a reliable decision. Draft supported sections and flag gaps while other questions remain open.
 
 For a chat-only draft or review, present proposed changes in the response. Apply file, index, and diagram updates only for tasks that involve editing project files.

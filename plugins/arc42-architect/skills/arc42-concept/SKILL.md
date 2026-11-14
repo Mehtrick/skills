@@ -6,6 +6,8 @@ description: "Create or revise arc42 section 8 crosscutting concepts and connect
 
 # Crosscutting Concepts
 
+Search the target repository for the relevant documents and conventions. If the source or destination is unclear after checking repository guidance and existing files, ask the user which location to use before editing.
+
 1. Locate the concept index, related concepts, and applicable ADRs. Establish which components or teams the concept affects and the crosscutting problem it addresses.
 2. Describe context and problem, the proposed or adopted approach, constraints, and consequences. Identify rollout or adoption implications and trade-offs where relevant. Reference ADRs that directly govern the approach.
 3. Follow local conventions. If the project uses numbered concept files, use the next unused ID in its sequence and a stable slug, for example CC-004-audit-logging. Use the [concept template](assets/concept.adoc) for AsciiDoc when appropriate.
