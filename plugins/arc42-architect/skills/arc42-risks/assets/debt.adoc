@@ -1,0 +1,17 @@
+[[debt-nnn]]
+=== DEBT-NNN: <Technical debt title>
+
+[cols="h,3"]
+|===
+| Status | <Open / Resolved / Closed>
+| Priority | <Level and rationale>
+|===
+
+==== Description
+<Existing compromise and why it arose.>
+
+==== Impact
+<Observed effect on maintenance, delivery, stability, or other qualities.>
+
+==== Remediation
+<Remedy, owner, and estimate if known.>

@@ -1,0 +1,16 @@
+=== <Building block name>
+
+<Responsibility and role in the system.>
+
+Interfaces::
+
+[cols="1,1,3",options="header"]
+|===
+| Interface | Direction | Description
+| <Name and protocol> | <Inbound or outbound> | <Partner and exchange>
+|===
+
+Quality properties:: <Relevant system quality and contribution.>
+Core capabilities:: <Principal functions.>
+Location:: <Repository, module, or documentation link.>
+Related decisions:: <Relevant ADR links.>

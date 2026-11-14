@@ -1,0 +1,20 @@
+[[adr-nnn]]
+=== ADR-NNN: <Decision title>
+
+[cols="h,3"]
+|===
+| Status | <Proposed / Accepted / Superseded>
+| Decision owner | <Person or team>
+| Date | <Decision or proposal date>
+| Decision | <Selected option>
+| Quality impacts | <Characteristic, subcharacteristic, rationale>
+|===
+
+==== Context and rationale
+<Problem, constraints, and why the selected option fits.>
+
+==== Consequences
+<Benefits, drawbacks, risks, and follow-up work.>
+
+==== Considered alternatives
+<The alternatives and why they were set aside.>

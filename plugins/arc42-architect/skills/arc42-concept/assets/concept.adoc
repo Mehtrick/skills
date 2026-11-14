@@ -1,0 +1,17 @@
+[[cc-nnn]]
+=== CC-NNN: <Concept title>
+
+==== Context and problem
+<Crosscutting problem and affected areas.>
+
+==== Approach
+<The approach and where it applies.>
+
+==== Constraints
+<Relevant technical, business, and organizational constraints.>
+
+==== Consequences
+<Trade-offs, adoption implications, and open issues.>
+
+==== Related decisions
+<Links to relevant ADRs.>

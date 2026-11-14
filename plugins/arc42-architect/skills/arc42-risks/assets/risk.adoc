@@ -1,0 +1,22 @@
+[[risk-nnn]]
+=== RISK-NNN: <Risk title>
+
+[cols="h,3"]
+|===
+| Status | <Open / Mitigated / Closed>
+| Likelihood | <Level and rationale>
+| Severity | <Level and rationale>
+| Priority | <Level and rationale>
+|===
+
+==== Description
+<Potential event, trigger, and affected scope.>
+
+==== Impact
+<Effect on quality goals or delivery.>
+
+==== Mitigation
+<Measures to reduce likelihood or severity.>
+
+==== Contingency
+<Action if the risk materializes.>

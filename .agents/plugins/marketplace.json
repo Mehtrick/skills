@@ -1,0 +1,20 @@
+{
+  "name": "skills-local",
+  "interface": {
+    "displayName": "Skills Repository"
+  },
+  "plugins": [
+    {
+      "name": "arc42-architect",
+      "source": {
+        "source": "local",
+        "path": "./plugins/arc42-architect"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

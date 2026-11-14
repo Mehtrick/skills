@@ -1,0 +1,16 @@
+{
+  "name": "arc42-architect",
+  "version": "0.1.0",
+  "description": "Draft, extend, and review arc42 software architecture documentation.",
+  "author": {
+    "name": "mehtrick"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "arc42 Architect",
+    "shortDescription": "Draft and review arc42 documentation",
+    "defaultPrompt": [
+      "Draft an arc42 outline and identify the missing architecture evidence."
+    ]
+  }
+}
