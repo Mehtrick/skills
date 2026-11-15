@@ -1,6 +1,6 @@
 # skills
 
-Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt Use Cases mit `use-case-write`, prüft sie und gleicht sie mit dem Code ab. **Developer** implementiert Use Cases und direkt mitgegebene Anforderungen testgetrieben und prüft anschließend Codequalität und Testabdeckung.
+Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt Use Cases mit `use-case-write`, prüft sie und gleicht sie mit dem Code ab. **Developer** implementiert Anforderungen testgetrieben, untersucht Fehler und prüft Codeänderungen.
 
 ## Zielplattformen
 
@@ -12,7 +12,7 @@ Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten f�
 
 Du kannst **arc42 Architect** (`arc42-architect`), **System Analyst** (`system-analyst`) und **Developer** (`software-developer`) einzeln oder gemeinsam aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills) installieren. Developer kann Use Cases aus dem Zielprojekt direkt lesen. Die Installation von System Analyst ist dafür optional.
 
-Developer enthält den separat aufrufbaren Skill `review-code-changes`. Er prüft Änderungen auf Projektkonsistenz, Codequalität und Sicherheit und berücksichtigt die Entwicklungsrichtlinien und Architekturentscheidungen des Zielprojekts. Der TDD-Workflow verwendet denselben Skill für das Abschlussreview.
+Mit `diagnose-bug` untersucht Developer gemeldete Fehler und stellt sie mit einem Regressionstest nach. Mit `review-code-changes` prüft er Codequalität, Sicherheit und die Einhaltung von Projektvorgaben und Anforderungen. Beide Skills lassen sich separat aufrufen.
 
 ### GitHub Copilot
 
@@ -41,6 +41,8 @@ Bitte **System Analyst**, `ask-questions` für eine Anforderung zu verwenden. In
 
 Wähle **Developer** und gib eine Use-Case-ID oder eine kleine Anforderung an. Prüfe, ob der Agent zuerst einen Test schreibt und dessen erwarteten Fehlschlag meldet, bevor er den Produktivcode ändert.
 
+Bitte **Developer**, mit `diagnose-bug` einen Fehler zu untersuchen. Prüfe, ob er vor dem Reproduktionsversuch die wahrscheinliche Ursache mit Codefundstellen meldet.
+
 Bitte **Developer**, mit `review-code-changes` einen vorhandenen Diff zu prüfen. Prüfe, ob die Befunde auf konkrete Codezeilen und die jeweils geltenden Projektvorgaben verweisen.
 
 [GitHub Copilot CLI – Plugins installieren](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing) · [VS Code – Agent Plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)
@@ -65,6 +67,8 @@ Nach dem Hinzufügen des Marktplatzes findest du **arc42 Architect**, **System A
 Eine Anforderung kannst du mit `$system-analyst:ask-questions` klären lassen.
 
 Gib `$software-developer:developer` einen Use Case oder eine kleine Anforderung. Prüfe, ob Codex vor der Implementierung einen lauffähigen, aus dem erwarteten Grund fehlschlagenden Test ausführt und nach dem Review die zugehörigen Testergebnisse nennt.
+
+Rufe `$software-developer:diagnose-bug` mit einem Fehlerbericht auf und prüfe, ob Codex die wahrscheinliche Ursache mit Codefundstellen nennt, bevor er den Fehler per Test nachstellt.
 
 Rufe `$software-developer:review-code-changes` für ein eigenständiges Review auf. Gib bei Bedarf den Diff oder Vergleichsstand an.
 
@@ -94,7 +98,7 @@ Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten
 
 Wähle `developer` und bitte den Agenten, einen Use Case oder eine kleine Anforderung umzusetzen. Prüfe, ob er den gleichnamigen Skill lädt, den Test vor der Implementierung ausführt und nach dem Review die Testabdeckung der Anforderung belegt.
 
-Rufe `@review-code-changes` mit einem vorhandenen Diff auf und prüfe, ob OpenCode den Skill lädt.
+Rufe `@diagnose-bug` mit einem Fehlerbericht oder `@review-code-changes` mit einem vorhandenen Diff auf und prüfe, ob OpenCode den jeweiligen Skill lädt.
 
 [OpenCode – Agenten](https://opencode.ai/docs/agents/) · [OpenCode – Skills](https://opencode.ai/docs/skills/)
 

@@ -5,6 +5,8 @@ description: Implement a use case or directly supplied requirement with test-dri
 
 # Developer
 
+For a reported bug, use [Diagnose Bug](../diagnose-bug/SKILL.md) to trace and reproduce it before making production changes.
+
 ## Find the requirements
 
 1. Read the target repository's instructions. Find the relevant documentation, implementation entry points, nearby tests, and test commands. Consult the project glossary and applicable architecture decisions when available.
