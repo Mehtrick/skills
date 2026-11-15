@@ -1,6 +1,6 @@
 {
   "name": "software-developer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Implement requirements with TDD, diagnose and reproduce bugs, and review changes for project consistency, code quality, and security.",
   "skills": "./skills/",
   "interface": {
@@ -9,7 +9,7 @@
     "logo": "./assets/software-developer-blue.png",
     "composerIcon": "./assets/software-developer-blue.png",
     "defaultPrompt": [
-      "Use $software-developer:developer to implement a use case or requirement with test-driven development.",
+      "Use $software-developer:implement-feature to implement a use case or requirement with test-driven development.",
       "Use $software-developer:diagnose-bug to investigate a reported bug and reproduce it with a regression test.",
       "Use $software-developer:review-code-changes to review my changes against the project's standards and architecture decisions."
     ]

@@ -1,6 +1,6 @@
 {
   "name": "arc42-architect",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Draft, extend, and review arc42 software architecture documentation.",
   "author": {
     "name": "mehtrick"
@@ -12,7 +12,7 @@
     "logo": "./assets/arc42-architect-gold.png",
     "composerIcon": "./assets/arc42-architect-gold.png",
     "defaultPrompt": [
-      "Draft an arc42 outline and identify the missing architecture evidence."
+      "Use $arc42-architect:document-architecture to draft an arc42 outline and identify missing architecture evidence."
     ]
   }
 }

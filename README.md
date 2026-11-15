@@ -1,6 +1,6 @@
 # skills
 
-Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt Use Cases mit `use-case-write`, prüft sie und gleicht sie mit dem Code ab. **Developer** implementiert Anforderungen testgetrieben, untersucht Fehler und prüft Codeänderungen.
+Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge.
 
 ## Zielplattformen
 
@@ -8,11 +8,36 @@ Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten f�
 - Codex
 - OpenCode
 
+## Skills
+
+| Plugin | Skill | Was er tut | Erwartete Eingabe |
+| --- | --- | --- | --- |
+| arc42 Architect | [`document-architecture`](plugins/arc42-architect/skills/document-architecture/SKILL.md) | Erstellt, ergänzt oder prüft arc42-Dokumentation und benennt fehlende Belege. | System und gewünschte Kapitel oder Fragestellung. |
+| arc42 Architect | [`document-architecture-introduction`](plugins/arc42-architect/skills/document-architecture-introduction/SKILL.md) | Dokumentiert Systemzweck, Qualitätsziele und Erwartungen der Stakeholder in Abschnitt 1. | Systemauftrag, Anforderungen und bekannte Stakeholder. |
+| arc42 Architect | [`document-architecture-constraints`](plugins/arc42-architect/skills/document-architecture-constraints/SKILL.md) | Erfasst oder prüft verbindliche Rahmenbedingungen und ihre Architekturfolgen in Abschnitt 2. | Technische, organisatorische oder konventionsbedingte Vorgaben mit ihren Quellen. |
+| arc42 Architect | [`document-system-context`](plugins/arc42-architect/skills/document-system-context/SKILL.md) | Beschreibt Systemgrenze, fachlichen Informationsaustausch und technische Schnittstellen in Abschnitt 3. | Systemumfang, externe Partner und bekannte Schnittstellen. |
+| arc42 Architect | [`document-solution-strategy`](plugins/arc42-architect/skills/document-solution-strategy/SKILL.md) | Verknüpft Architekturprinzipien sowie Technologie- und Organisationsentscheidungen mit Qualitätszielen in Abschnitt 4. | Qualitätsziele, Rahmenbedingungen und relevante Architekturentscheidungen. |
+| arc42 Architect | [`document-building-blocks`](plugins/arc42-architect/skills/document-building-blocks/SKILL.md) | Dokumentiert Bausteine, Verantwortlichkeiten und Schnittstellen in Abschnitt 5. | System- oder Bausteinname und relevante Code- oder Konfigurationsstellen. |
+| arc42 Architect | [`document-crosscutting-concepts`](plugins/arc42-architect/skills/document-crosscutting-concepts/SKILL.md) | Erstellt oder überarbeitet Querschnittskonzepte in Abschnitt 8 und verknüpft sie mit ADRs. | Bausteinübergreifendes Thema, betroffene Bereiche und vorhandene Entscheidungen. |
+| arc42 Architect | [`create-adr`](plugins/arc42-architect/skills/create-adr/SKILL.md) | Erstellt oder überarbeitet einen Architecture Decision Record (ADR) in Abschnitt 9. | Architekturentscheidung oder Entscheidungsfrage, Kontext und bekannte Alternativen. |
+| arc42 Architect | [`write-quality-scenarios`](plugins/arc42-architect/skills/write-quality-scenarios/SKILL.md) | Formuliert messbare, priorisierte Qualitätsszenarien für Abschnitt 10. | Qualitätsziel oder konkreter Auslöser, erwartete Systemreaktion und Messgröße, soweit bekannt. |
+| arc42 Architect | [`build-quality-tree`](plugins/arc42-architect/skills/build-quality-tree/SKILL.md) | Erstellt oder prüft einen durch Belege gestützten Qualitätsbaum in Abschnitt 10. | Vorhandene Qualitätsziele, Qualitätsszenarien und akzeptierte ADRs, soweit verfügbar. |
+| arc42 Architect | [`document-risks-and-debt`](plugins/arc42-architect/skills/document-risks-and-debt/SKILL.md) | Erfasst oder aktualisiert Risiken und technische Schulden samt Auswirkungen, Maßnahmen und Status in Abschnitt 11. | Konkretes Risiko oder bestehende technische Schuld und bekannte Auswirkungen. |
+| arc42 Architect | [`maintain-glossary`](plugins/arc42-architect/skills/maintain-glossary/SKILL.md) | Pflegt oder prüft Begriffe, Abkürzungen und Definitionen in Abschnitt 12. | Begriff, Abkürzung oder zu prüfendes Glossar mit relevantem Projektkontext. |
+| arc42 Architect | [`review-architecture`](plugins/arc42-architect/skills/review-architecture/SKILL.md) | Prüft arc42-Dokumentation auf Belege, Konsistenz, Terminologie und Verweise. | Zu prüfende Kapitel oder Dokumente und verfügbare Referenzen. |
+| System Analyst | [`analyze-requirements`](plugins/system-analyst/skills/analyze-requirements/SKILL.md) | Prüft fachliche Anforderungen anhand von Projektdokumentation, Code und Tests und koordiniert die Arbeit an Use Cases. | Fachliche Anforderung, Fragestellung oder Use-Case-Referenz. |
+| System Analyst | [`ask-questions`](plugins/system-analyst/skills/ask-questions/SKILL.md) | Klärt eine unklare Anforderung mit gezielten Rückfragen. | Anforderung mit offenen Punkten und optionalem Projektkontext. |
+| System Analyst | [`clarify-business-decisions`](plugins/system-analyst/skills/clarify-business-decisions/SKILL.md) | Klärt offene Entscheidungen anhand von Projektbelegen und leitet überprüfbare Änderungen an Use Cases ab. | Vorgeschlagener oder unklarer Geschäftsablauf und verfügbare Projektquellen. |
+| System Analyst | [`write-use-case`](plugins/system-analyst/skills/write-use-case/SKILL.md) | Erstellt oder überarbeitet einen nummerierten AsciiDoc-Use-Case mit Änderungshistorie. | Fachliches Ziel und bekannte Regeln oder ein vorhandener Use Case mit Änderungswunsch. |
+| System Analyst | [`review-use-case`](plugins/system-analyst/skills/review-use-case/SKILL.md) | Prüft Aufbau, Terminologie und fachliche Konsistenz eines Use Cases. | Use-Case-Entwurf oder Referenz auf den zu prüfenden Use Case. |
+| System Analyst | [`verify-use-case-implementation`](plugins/system-analyst/skills/verify-use-case-implementation/SKILL.md) | Gleicht Abläufe und Geschäftsregeln mit Code und Tests ab und listet Abweichungen in einer Tabelle. | Use Case oder Use-Case-ID und Zugriff auf die Implementierung. |
+| Developer | [`implement-feature`](plugins/software-developer/skills/implement-feature/SKILL.md) | Implementiert eine Anforderung testgetrieben und prüft Codequalität und Anforderungsabdeckung. | Use Case, Use-Case-ID oder direkt formulierte Anforderung. |
+| Developer | [`diagnose-bug`](plugins/software-developer/skills/diagnose-bug/SKILL.md) | Ermittelt die wahrscheinliche Fehlerursache und reproduziert den Fehler mit einem Regressionstest. | Fehlerbericht mit beobachtetem und erwartetem Verhalten sowie bekannten Auslösern. |
+| Developer | [`review-code-changes`](plugins/software-developer/skills/review-code-changes/SKILL.md) | Prüft Änderungen auf Codequalität, Sicherheit und Übereinstimmung mit Vorgaben und Anforderungen. | Diff, Pull Request oder Arbeitsstand und gegebenenfalls ein Vergleichsstand oder Anforderungen. |
+
 ## Installation
 
 Du kannst **arc42 Architect** (`arc42-architect`), **System Analyst** (`system-analyst`) und **Developer** (`software-developer`) einzeln oder gemeinsam aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills) installieren. Developer kann Use Cases aus dem Zielprojekt direkt lesen. Die Installation von System Analyst ist dafür optional.
-
-Mit `diagnose-bug` untersucht Developer gemeldete Fehler und stellt sie mit einem Regressionstest nach. Mit `review-code-changes` prüft er Codequalität, Sicherheit und die Einhaltung von Projektvorgaben und Anforderungen. Beide Skills lassen sich separat aufrufen.
 
 ### GitHub Copilot
 
@@ -35,15 +60,7 @@ copilot plugin install software-developer@mehtrick-skills
 2. Wähle **Browse → Configure Marketplaces → Add Marketplace** und gib `https://github.com/Mehtrick/skills.git` ein.
 3. Installiere die gewünschten Plugins `arc42-architect`, `system-analyst` oder `software-developer` aus dem Marktplatz `mehtrick-skills`.
 
-Öffne zur Prüfung eine neue Sitzung im Zielprojekt und wähle den Agenten über `/agent` in der CLI oder in der Agentenauswahl von VS Code. Bitte **arc42 Architect** um eine arc42-Gliederung oder **System Analyst**, mit `grill-with-docs` eine offene Entscheidung zu einem Use Case zu klären.
-
-Bitte **System Analyst**, `ask-questions` für eine Anforderung zu verwenden. In VS Code kannst du den Skill auch über die Skill-Auswahl mit `/` auswählen.
-
-Wähle **Developer** und gib eine Use-Case-ID oder eine kleine Anforderung an. Prüfe, ob der Agent zuerst einen Test schreibt und dessen erwarteten Fehlschlag meldet, bevor er den Produktivcode ändert.
-
-Bitte **Developer**, mit `diagnose-bug` einen Fehler zu untersuchen. Prüfe, ob er vor dem Reproduktionsversuch die wahrscheinliche Ursache mit Codefundstellen meldet.
-
-Bitte **Developer**, mit `review-code-changes` einen vorhandenen Diff zu prüfen. Prüfe, ob die Befunde auf konkrete Codezeilen und die jeweils geltenden Projektvorgaben verweisen.
+Öffne zur Prüfung eine neue Sitzung im Zielprojekt und wähle den Agenten über `/agent` in der CLI oder in der Agentenauswahl von VS Code. Bitte **arc42 Architect**, mit `document-architecture` eine arc42-Gliederung zu erstellen. Bitte **System Analyst**, mit `analyze-requirements` eine fachliche Anforderung zu klären. Gib **Developer** für `implement-feature` eine kleine Anforderung und prüfe, ob er vor der Implementierung einen aus dem erwarteten Grund fehlschlagenden Test ausführt.
 
 [GitHub Copilot CLI – Plugins installieren](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing) · [VS Code – Agent Plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)
 
@@ -62,15 +79,7 @@ codex plugin add software-developer@mehtrick-skills
 
 Nach dem Hinzufügen des Marktplatzes findest du **arc42 Architect**, **System Analyst** und **Developer** auch in Codex Desktop unter **Plugins → Mehtrick Skills**. Einen bereits eingerichteten Marktplatz aktualisierst du mit `codex plugin marketplace upgrade mehtrick-skills`.
 
-Öffne zur Prüfung einen neuen Chat im Zielprojekt. Bitte mit `$arc42-architect:arc42-architect` um eine arc42-Gliederung oder mit `$system-analyst:grill-with-docs` um die Klärung einer offenen Entscheidung zu einem Use Case.
-
-Eine Anforderung kannst du mit `$system-analyst:ask-questions` klären lassen.
-
-Gib `$software-developer:developer` einen Use Case oder eine kleine Anforderung. Prüfe, ob Codex vor der Implementierung einen lauffähigen, aus dem erwarteten Grund fehlschlagenden Test ausführt und nach dem Review die zugehörigen Testergebnisse nennt.
-
-Rufe `$software-developer:diagnose-bug` mit einem Fehlerbericht auf und prüfe, ob Codex die wahrscheinliche Ursache mit Codefundstellen nennt, bevor er den Fehler per Test nachstellt.
-
-Rufe `$software-developer:review-code-changes` für ein eigenständiges Review auf. Gib bei Bedarf den Diff oder Vergleichsstand an.
+Öffne zur Prüfung einen neuen Chat im Zielprojekt. Bitte mit `$arc42-architect:document-architecture` um eine arc42-Gliederung und mit `$system-analyst:analyze-requirements` um die Klärung einer fachlichen Anforderung. Gib `$software-developer:implement-feature` eine kleine Anforderung und prüfe, ob Codex vor der Implementierung einen aus dem erwarteten Grund fehlschlagenden Test ausführt.
 
 [Codex – Git-Marktplätze hinzufügen](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
 
@@ -94,14 +103,10 @@ Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe den Block im Sta
 )
 ```
 
-Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten als primären Agenten. Bitte `arc42-architect` um eine arc42-Gliederung oder `system-analyst`, mit `@grill-with-docs` eine offene Entscheidung zu einem Use Case zu klären. Mit `@ask-questions` kannst du Rückfragen zu einer Anforderung starten.
-
-Wähle `developer` und bitte den Agenten, einen Use Case oder eine kleine Anforderung umzusetzen. Prüfe, ob er den gleichnamigen Skill lädt, den Test vor der Implementierung ausführt und nach dem Review die Testabdeckung der Anforderung belegt.
-
-Rufe `@diagnose-bug` mit einem Fehlerbericht oder `@review-code-changes` mit einem vorhandenen Diff auf und prüfe, ob OpenCode den jeweiligen Skill lädt.
+Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten als primären Agenten. Bitte `arc42-architect`, mit `@document-architecture` eine arc42-Gliederung zu erstellen, und `system-analyst`, mit `@analyze-requirements` eine fachliche Anforderung zu klären. Gib `developer` mit `@implement-feature` eine kleine Anforderung und prüfe, ob der Agent den Skill lädt und vor der Implementierung einen aus dem erwarteten Grund fehlschlagenden Test ausführt.
 
 [OpenCode – Agenten](https://opencode.ai/docs/agents/) · [OpenCode – Skills](https://opencode.ai/docs/skills/)
 
 ## Inspiration und Skill-Quellen
 
-Matt Pococks Sammlung ist eine Inspiration für den Aufbau dieses Repositories. Sein `grill-with-docs` ist die Vorlage für die auf Use Cases zugeschnittene Variante in System Analyst. [mattpocock/skills](https://github.com/mattpocock/skills) · [grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs)
+Matt Pococks Sammlung ist eine Inspiration für den Aufbau dieses Repositories. Sein `grill-with-docs` ist die Vorlage für `clarify-business-decisions` in System Analyst. [mattpocock/skills](https://github.com/mattpocock/skills) · [grill-with-docs](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs)

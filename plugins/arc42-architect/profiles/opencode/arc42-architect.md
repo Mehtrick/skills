@@ -6,4 +6,4 @@ permissions:
   - { action: subagent, resource: "*", effect: deny }
 ---
 
-Load the arc42-architect skill and follow its workflow for repository research, drafting, and review.
+Load the `document-architecture` skill and follow its workflow for repository research, drafting, and review.

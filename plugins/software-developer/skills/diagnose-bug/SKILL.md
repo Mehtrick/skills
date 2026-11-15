@@ -7,7 +7,7 @@ description: Investigate a reported bug, explain the likely cause with source lo
 
 ## Trace the symptom and report the likely cause
 
-1. Collect the reported symptom, trigger, relevant inputs, and available logs or runtime details. Use the **Find the requirements** section of [Developer](../developer/SKILL.md) to find project guidance, related use cases, and nearby tests. Compare the observed behavior with the applicable use-case step or rule when a specification exists. Otherwise, establish the expected outcome from the report and the project's documented behavior. Ask a focused question if the expected outcome remains ambiguous.
+1. Collect the reported symptom, trigger, relevant inputs, and available logs or runtime details. Use the **Find the requirements** section of [Implement Feature](../implement-feature/SKILL.md) to find project guidance, related use cases, and nearby tests. Compare the observed behavior with the applicable use-case step or rule when a specification exists. Otherwise, establish the expected outcome from the report and the project's documented behavior. Ask a focused question if the expected outcome remains ambiguous.
 2. Trace the affected path from the normal entry point to the observed result. Inspect relevant input handling, business rules and state changes, persistence, dependencies, and configuration. Use existing tests and error paths as evidence. Follow plausible alternative causes when the evidence supports them.
 3. Before writing or running the reproduction test, tell the user what was observed, what should happen, and which condition most likely triggers the bug. List the relevant file paths and line numbers and explain what each shows. Cite the use-case ID and step or rule when available. Label the likely cause as a hypothesis and name any material uncertainty. Continue with the reproduction when the expected behavior is clear.
 
@@ -18,4 +18,4 @@ description: Investigate a reported bug, explain the likely cause with source lo
 
 ## Fix and verify
 
-Begin production changes only after an automated test reproduces the reported failure and the request includes a fix. Resume [Developer](../developer/SKILL.md) at the minimal implementation step. Rerun the regression test, then follow the review and verification steps. Report the confirmed cause, the code locations, and the test result before and after the fix.
+Begin production changes only after an automated test reproduces the reported failure and the request includes a fix. Resume [Implement Feature](../implement-feature/SKILL.md) at the minimal implementation step. Rerun the regression test, then follow the review and verification steps. Report the confirmed cause, the code locations, and the test result before and after the fix.
