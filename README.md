@@ -1,6 +1,6 @@
 # skills
 
-Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt und prüft Use Cases und gleicht sie mit dem Code ab. **Developer** implementiert Use Cases und direkt mitgegebene Anforderungen testgetrieben und prüft anschließend Codequalität und Testabdeckung.
+Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt Use Cases mit `use-case-write`, prüft sie und gleicht sie mit dem Code ab. **Developer** implementiert Use Cases und direkt mitgegebene Anforderungen testgetrieben und prüft anschließend Codequalität und Testabdeckung.
 
 ## Zielplattformen
 
@@ -12,15 +12,7 @@ Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten f�
 
 Du kannst **arc42 Architect** (`arc42-architect`), **System Analyst** (`system-analyst`) und **Developer** (`software-developer`) einzeln oder gemeinsam aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills) installieren. Developer kann Use Cases aus dem Zielprojekt direkt lesen. Die Installation von System Analyst ist dafür optional.
 
-Wenn du den Marktplatz bereits als `skills-local` eingebunden hast, deinstalliere zuerst die Plugins aus dieser Quelle und entferne den alten Marktplatz. Folge dann der Anleitung für deine Plattform.
-
-System Analyst enthält ab Version `0.2.0` den Skill `grill-with-docs`. Er klärt offene fachliche Entscheidungen anhand bestehender Use Cases, des Glossars und des Codes und hält fest, welche Use-Case-Schritte und Akzeptanzkriterien sich daraus ergeben.
-
-System Analyst enthält ab Version `0.3.0` den Skill `ask-questions`. Er stellt gezielte Rückfragen zu einer Anforderung und fasst die geklärten Ergebnisse zusammen. Er wird mit dem Paket installiert.
-
 Developer enthält den separat aufrufbaren Skill `review-code-changes`. Er prüft Änderungen auf Projektkonsistenz, Codequalität und Sicherheit und berücksichtigt die Entwicklungsrichtlinien und Architekturentscheidungen des Zielprojekts. Der TDD-Workflow verwendet denselben Skill für das Abschlussreview.
-
-arc42 Architect `0.4.0` enthält eine inkompatible Änderung. Der Skill `arc42-use-case` entfällt. Verwende zum Erstellen oder Überarbeiten von Use Cases den Skill `use-case-write` aus dem separat installierbaren Paket System Analyst. Installiere dieses Paket zusätzlich, falls es noch fehlt.
 
 ### GitHub Copilot
 
@@ -80,7 +72,7 @@ Rufe `$software-developer:review-code-changes` für ein eigenständiges Review a
 
 ### OpenCode
 
-Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe den Block im Stammverzeichnis des Zielprojekts aus. Lass in `packages` die Namen der Pakete stehen, die du installieren möchtest. Führe denselben Block für Updates erneut aus.
+Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe den Block im Stammverzeichnis des Zielprojekts aus. Lass in `packages` die Namen der Pakete stehen, die du installieren möchtest. Führe denselben Block für Updates erneut aus. Bereinige bei Bedarf veraltete Dateien aus früheren Paketinstallationen im Zielprojekt.
 
 ```bash
 (
@@ -103,8 +95,6 @@ Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten
 Wähle `developer` und bitte den Agenten, einen Use Case oder eine kleine Anforderung umzusetzen. Prüfe, ob er den gleichnamigen Skill lädt, den Test vor der Implementierung ausführt und nach dem Review die Testabdeckung der Anforderung belegt.
 
 Rufe `@review-code-changes` mit einem vorhandenen Diff auf und prüfe, ob OpenCode den Skill lädt.
-
-Beim Wechsel von arc42 Architect `0.3.0` auf `0.4.0` entferne zusätzlich das alte Verzeichnis `.opencode/skills/arc42-use-case` im Zielprojekt, falls du den Skill nicht selbst weiterpflegen möchtest. Der Kopierbefehl entfernt keine früher installierten Dateien. Verwende anschließend `@use-case-write` aus System Analyst und prüfe, dass der Skill geladen wird.
 
 [OpenCode – Agenten](https://opencode.ai/docs/agents/) · [OpenCode – Skills](https://opencode.ai/docs/skills/)
 

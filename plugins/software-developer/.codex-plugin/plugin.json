@@ -1,6 +1,6 @@
 {
   "name": "software-developer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Implement use cases and requirements with TDD. Review changes for project consistency, code quality, and security.",
   "skills": "./skills/",
   "interface": {
