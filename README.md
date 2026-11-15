@@ -1,6 +1,6 @@
 # skills
 
-Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt und prüft Use Cases und gleicht sie mit dem Code ab.
+Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten für KI-Entwicklungswerkzeuge. **arc42 Architect** erstellt, ergänzt und prüft Softwarearchitektur-Dokumentation nach arc42. **System Analyst** klärt fachliche Anforderungen, schreibt und prüft Use Cases und gleicht sie mit dem Code ab. **Developer** implementiert Use Cases und direkt mitgegebene Anforderungen testgetrieben und prüft anschließend Codequalität und Testabdeckung.
 
 ## Zielplattformen
 
@@ -10,13 +10,15 @@ Dieses Repository sammelt wiederverwendbare Skills und spezialisierte Agenten f�
 
 ## Installation
 
-Du kannst **arc42 Architect** (`arc42-architect`) und **System Analyst** (`system-analyst`) einzeln oder gemeinsam aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills) installieren.
+Du kannst **arc42 Architect** (`arc42-architect`), **System Analyst** (`system-analyst`) und **Developer** (`software-developer`) einzeln oder gemeinsam aus dem [GitHub-Repository Mehtrick/skills](https://github.com/Mehtrick/skills) installieren. Developer kann Use Cases aus dem Zielprojekt direkt lesen. Die Installation von System Analyst ist dafür optional.
 
 Wenn du den Marktplatz bereits als `skills-local` eingebunden hast, deinstalliere zuerst die Plugins aus dieser Quelle und entferne den alten Marktplatz. Folge dann der Anleitung für deine Plattform.
 
 System Analyst enthält ab Version `0.2.0` den Skill `grill-with-docs`. Er klärt offene fachliche Entscheidungen anhand bestehender Use Cases, des Glossars und des Codes und hält fest, welche Use-Case-Schritte und Akzeptanzkriterien sich daraus ergeben.
 
 System Analyst enthält ab Version `0.3.0` den Skill `ask-questions`. Er stellt gezielte Rückfragen zu einer Anforderung und fasst die geklärten Ergebnisse zusammen. Er wird mit dem Paket installiert.
+
+Developer enthält den separat aufrufbaren Skill `review-code-changes`. Er prüft Änderungen auf Projektkonsistenz, Codequalität und Sicherheit und berücksichtigt die Entwicklungsrichtlinien und Architekturentscheidungen des Zielprojekts. Der TDD-Workflow verwendet denselben Skill für das Abschlussreview.
 
 arc42 Architect `0.4.0` enthält eine inkompatible Änderung. Der Skill `arc42-use-case` entfällt. Verwende zum Erstellen oder Überarbeiten von Use Cases den Skill `use-case-write` aus dem separat installierbaren Paket System Analyst. Installiere dieses Paket zusätzlich, falls es noch fehlt.
 
@@ -32,17 +34,22 @@ Füge den Marktplatz einmal hinzu und führe den Installationsbefehl für jedes 
 copilot plugin marketplace add Mehtrick/skills
 copilot plugin install arc42-architect@mehtrick-skills
 copilot plugin install system-analyst@mehtrick-skills
+copilot plugin install software-developer@mehtrick-skills
 ```
 
 **VS Code**
 
 1. Wähle Copilot als Agent und öffne **Chat: Open Customizations**.
 2. Wähle **Browse → Configure Marketplaces → Add Marketplace** und gib `https://github.com/Mehtrick/skills.git` ein.
-3. Installiere `arc42-architect`, `system-analyst` oder beide aus dem Marktplatz `mehtrick-skills`.
+3. Installiere die gewünschten Plugins `arc42-architect`, `system-analyst` oder `software-developer` aus dem Marktplatz `mehtrick-skills`.
 
 Öffne zur Prüfung eine neue Sitzung im Zielprojekt und wähle den Agenten über `/agent` in der CLI oder in der Agentenauswahl von VS Code. Bitte **arc42 Architect** um eine arc42-Gliederung oder **System Analyst**, mit `grill-with-docs` eine offene Entscheidung zu einem Use Case zu klären.
 
 Bitte **System Analyst**, `ask-questions` für eine Anforderung zu verwenden. In VS Code kannst du den Skill auch über die Skill-Auswahl mit `/` auswählen.
+
+Wähle **Developer** und gib eine Use-Case-ID oder eine kleine Anforderung an. Prüfe, ob der Agent zuerst einen Test schreibt und dessen erwarteten Fehlschlag meldet, bevor er den Produktivcode ändert.
+
+Bitte **Developer**, mit `review-code-changes` einen vorhandenen Diff zu prüfen. Prüfe, ob die Befunde auf konkrete Codezeilen und die jeweils geltenden Projektvorgaben verweisen.
 
 [GitHub Copilot CLI – Plugins installieren](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing) · [VS Code – Agent Plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)
 
@@ -56,13 +63,18 @@ Füge den Marktplatz einmal hinzu und führe den Installationsbefehl für jedes 
 codex plugin marketplace add https://github.com/Mehtrick/skills.git --ref main
 codex plugin add arc42-architect@mehtrick-skills
 codex plugin add system-analyst@mehtrick-skills
+codex plugin add software-developer@mehtrick-skills
 ```
 
-Nach dem Hinzufügen des Marktplatzes findest du **arc42 Architect** und **System Analyst** auch in Codex Desktop unter **Plugins → Mehtrick Skills**. Einen bereits eingerichteten Marktplatz aktualisierst du mit `codex plugin marketplace upgrade mehtrick-skills`.
+Nach dem Hinzufügen des Marktplatzes findest du **arc42 Architect**, **System Analyst** und **Developer** auch in Codex Desktop unter **Plugins → Mehtrick Skills**. Einen bereits eingerichteten Marktplatz aktualisierst du mit `codex plugin marketplace upgrade mehtrick-skills`.
 
 Öffne zur Prüfung einen neuen Chat im Zielprojekt. Bitte mit `$arc42-architect:arc42-architect` um eine arc42-Gliederung oder mit `$system-analyst:grill-with-docs` um die Klärung einer offenen Entscheidung zu einem Use Case.
 
 Eine Anforderung kannst du mit `$system-analyst:ask-questions` klären lassen.
+
+Gib `$software-developer:developer` einen Use Case oder eine kleine Anforderung. Prüfe, ob Codex vor der Implementierung einen lauffähigen, aus dem erwarteten Grund fehlschlagenden Test ausführt und nach dem Review die zugehörigen Testergebnisse nennt.
+
+Rufe `$software-developer:review-code-changes` für ein eigenständiges Review auf. Gib bei Bedarf den Diff oder Vergleichsstand an.
 
 [Codex – Git-Marktplätze hinzufügen](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli)
 
@@ -73,20 +85,24 @@ Du brauchst OpenCode 2, Git-Zugriff auf GitHub und Bash. Führe den Block im Sta
 ```bash
 (
   set -e
-  packages=(arc42-architect system-analyst)
+  packages=(arc42-architect system-analyst software-developer)
   skills_download="$(mktemp -d)"
   trap 'rm -rf -- "$skills_download"' EXIT
   git clone --depth 1 --branch main https://github.com/Mehtrick/skills.git "$skills_download"
   mkdir -p .opencode/agents .opencode/skills
   for package in "${packages[@]}"; do
     package_dir="$skills_download/plugins/$package"
-    cp "$package_dir/profiles/opencode/$package.md" .opencode/agents/
+    cp "$package_dir"/profiles/opencode/*.md .opencode/agents/
     cp -R "$package_dir/skills/." .opencode/skills/
   done
 )
 ```
 
 Starte zur Prüfung OpenCode im Zielprojekt und wähle den installierten Agenten als primären Agenten. Bitte `arc42-architect` um eine arc42-Gliederung oder `system-analyst`, mit `@grill-with-docs` eine offene Entscheidung zu einem Use Case zu klären. Mit `@ask-questions` kannst du Rückfragen zu einer Anforderung starten.
+
+Wähle `developer` und bitte den Agenten, einen Use Case oder eine kleine Anforderung umzusetzen. Prüfe, ob er den gleichnamigen Skill lädt, den Test vor der Implementierung ausführt und nach dem Review die Testabdeckung der Anforderung belegt.
+
+Rufe `@review-code-changes` mit einem vorhandenen Diff auf und prüfe, ob OpenCode den Skill lädt.
 
 Beim Wechsel von arc42 Architect `0.3.0` auf `0.4.0` entferne zusätzlich das alte Verzeichnis `.opencode/skills/arc42-use-case` im Zielprojekt, falls du den Skill nicht selbst weiterpflegen möchtest. Der Kopierbefehl entfernt keine früher installierten Dateien. Verwende anschließend `@use-case-write` aus System Analyst und prüfe, dass der Skill geladen wird.
 

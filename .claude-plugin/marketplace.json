@@ -11,6 +11,10 @@
     {
       "name": "system-analyst",
       "source": "./plugins/system-analyst"
+    },
+    {
+      "name": "software-developer",
+      "source": "./plugins/software-developer"
     }
   ]
 }

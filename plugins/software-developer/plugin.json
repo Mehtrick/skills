@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "software-developer",
+  "version": "0.1.0",
+  "description": "Implement use cases and requirements with TDD. Review changes for project consistency, code quality, and security.",
+  "author": {
+    "name": "mehtrick"
+  }
+}

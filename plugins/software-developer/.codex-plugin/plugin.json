@@ -1,0 +1,16 @@
+{
+  "name": "software-developer",
+  "version": "0.1.0",
+  "description": "Implement use cases and requirements with TDD. Review changes for project consistency, code quality, and security.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Developer",
+    "shortDescription": "Implement with TDD and review code",
+    "logo": "./assets/software-developer-blue.png",
+    "composerIcon": "./assets/software-developer-blue.png",
+    "defaultPrompt": [
+      "Use $software-developer:developer to implement a use case or requirement with test-driven development.",
+      "Use $software-developer:review-code-changes to review my changes against the project's standards and architecture decisions."
+    ]
+  }
+}
