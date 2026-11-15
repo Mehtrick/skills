@@ -17,6 +17,7 @@ Be exacting about business meaning. Challenge vague terms, implicit rules, and i
 
 | Work | Load |
 | --- | --- |
+| Ask focused follow-up questions to clarify a business requirement | [ask-questions](../ask-questions/SKILL.md) |
 | Interview the user about unsettled business decisions and identify use-case changes | [grill-with-docs](../grill-with-docs/SKILL.md) |
 | Elicit requirements and create or revise a numbered AsciiDoc use case | [use-case-write](../use-case-write/SKILL.md) |
 | Review a use case against project conventions and neighboring use cases | [use-case-review](../use-case-review/SKILL.md) |

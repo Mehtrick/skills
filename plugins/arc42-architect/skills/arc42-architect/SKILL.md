@@ -29,7 +29,6 @@ For detailed work, load only the applicable sibling skill from the installed plu
 | Business and technical context | [arc42-context](../arc42-context/SKILL.md) |
 | Solution strategy | [arc42-solution-strategy](../arc42-solution-strategy/SKILL.md) |
 | Building blocks | [arc42-building-blocks](../arc42-building-blocks/SKILL.md) |
-| Use cases that inform runtime scenarios | [arc42-use-case](../arc42-use-case/SKILL.md) |
 | Crosscutting concepts | [arc42-concept](../arc42-concept/SKILL.md) |
 | Architecture decisions | [arc42-adr](../arc42-adr/SKILL.md) |
 | Quality scenarios | [arc42-quality-scenarios](../arc42-quality-scenarios/SKILL.md) |
@@ -38,6 +37,6 @@ For detailed work, load only the applicable sibling skill from the installed plu
 | Glossary | [arc42-glossary](../arc42-glossary/SKILL.md) |
 | Evidence, consistency, and terminology review | [arc42-quality-review](../arc42-quality-review/SKILL.md) |
 
-For runtime and deployment views, trace representative interactions and deployment mappings to observable evidence. Use cases can inform runtime views. A runtime view still needs the collaborating technical elements and their interactions.
+For runtime and deployment views, trace representative interactions and deployment mappings to observable evidence. Use cases can inform runtime views. A runtime view still needs the collaborating technical elements and their interactions. For a requested new or revised use case, use the `use-case-write` skill from System Analyst when available. If it is not installed, tell the user where to find it.
 
 Review the result against the request and existing architecture decisions. Report consequential gaps, affected sections, and any unresolved questions.

@@ -1,6 +1,6 @@
 {
   "name": "system-analyst",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Challenge business requirements against the existing system and document numbered AsciiDoc use cases.",
   "author": {
     "name": "mehtrick"
